@@ -1,0 +1,16 @@
+<%= form_with model: @user, local: :true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.file_field :image %>
+  <%= f.submit '登録' %>
+<% end %>
+
+ユーザー一覧
+
+
+<% @users.each do |user| %>
+  <div>
+    <%= user.name %>
+    <%= image_tag(user.image.to_s) %> <%# imageカラムの場合はto_sで文字列に変換が必要 %>
+  </div>
+<% end %>
